@@ -43,4 +43,19 @@ public class MathFunc {
     public static boolean magic6(int x, int y){
         return x == 6 || y == 6 || (x + y) == 6 || (x - y) == 6 || (y - x) == 6;
     }
+
+    public static String age(int x){
+        switch (x % 10) {
+            case 1:
+                if (x % 100 != 11) return x + " год";
+                break;
+            case 2, 3, 4:
+                if ((x % 100 != 12) || (x % 100 != 13) || (x % 100 != 14)) return x + " года";
+                break;
+            default:
+                break;
+        }
+        return x + " лет";
+    }
+
 }
