@@ -34,4 +34,9 @@ public class MathFunc {
         if ((x + y) >= 10 && (x + y) <= 19) return 20;
         return x+y;
     }
+
+    public static boolean is35(int x){
+        if ((x % 5 == 0) && (x % 3 == 0)) return false;
+        return (x % 5 == 0) || (x % 3 == 0);
+    }
 }

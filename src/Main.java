@@ -56,6 +56,10 @@ public class Main {
         //part2 task 7
         System.out.println("Сумма 2х: " + MathFunc.sum2(5,7));
         System.out.println("Сумма 2х: " + MathFunc.sum2(8,-1));
+        //part2 task 8
+        System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(5));
+        System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(8));
+        System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(15));
     }
 
     public static int lastNumSum(int a, int b){
