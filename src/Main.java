@@ -13,6 +13,10 @@ public class Main {
         System.out.println("Число двузначное?: " + Is2Digits.is2Digits(9));
         System.out.println("Число двузначное?: " + Is2Digits.is2Digits(129));
         System.out.println("Число двузначное?: " + Is2Digits.is2Digits(99));
+        //task 6
+        System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('Z'));
+        System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('d'));
+        System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('6'));
     }
 
 
