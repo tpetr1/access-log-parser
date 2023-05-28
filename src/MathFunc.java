@@ -25,4 +25,8 @@ public class MathFunc {
         if ((x <= z) && (y < z)) return z;
         return x;
     }
+
+    public static boolean sum3(int x, int y, int z){
+        return (((x+y) == z) || (x==(y+z)) || ((x+z)==y));
+    }
 }
