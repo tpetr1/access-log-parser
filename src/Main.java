@@ -41,6 +41,10 @@ public class Main {
         //part2 task 3
         System.out.println("Максимальное число и 2х: " + MathFunc.max(3,10));
         System.out.println("Максимальное число и 2х: " + MathFunc.max(6,4));
+        //part2 task 4
+        System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(3,10));
+        System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(6,4));
+        System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(6,6));
     }
 
     public static int lastNumSum(int a, int b){

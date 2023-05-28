@@ -14,4 +14,9 @@ public class MathFunc {
         if (x>=y) return x;
         return y;
     }
+    public static String makeDecision(int x, int y){
+        if (x>y) return x + " > " + y;
+        if (x<y) return x + " < " + y;
+        return x + " == " + y;
+    }
 }
