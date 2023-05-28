@@ -21,6 +21,10 @@ public class Main {
         System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,7));
         System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,3));
         System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,8));
+        //task 8
+        System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(4,8));
+        System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(10,8));
+        System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(10,5));
     }
 
 
