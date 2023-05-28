@@ -6,6 +6,9 @@ public class Main {
         System.out.println("Сумма 2х последних знаков числа: " + SumLastNums.sumLastNums(105667));
         //task 3
         System.out.println("Преобразование символа в цифру: " + CharToNum.charToNum('9'));
+        //task 4
+        System.out.println("Число положительное?: " + IsPositive.isPositive(9));
+        System.out.println("Число положительное?: " + IsPositive.isPositive(-129));
     }
 
 
