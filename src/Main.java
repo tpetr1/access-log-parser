@@ -69,6 +69,8 @@ public class Main {
         System.out.println("Age: " + MathFunc.age(31));
         System.out.println("Age: " + MathFunc.age(44));
         System.out.println("Age: " + MathFunc.age(111));
+        //part2 task 11
+        System.out.println("Day: " + MathFunc.day(5));
     }
 
     public static int lastNumSum(int a, int b){

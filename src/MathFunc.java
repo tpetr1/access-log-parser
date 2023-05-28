@@ -58,4 +58,33 @@ public class MathFunc {
         return x + " лет";
     }
 
+    public static String day(int x){
+        switch (x) {
+            case 1 -> {
+                return "понедельник";
+            }
+            case 2 -> {
+                return "вторник";
+            }
+            case 3 -> {
+                return "среда";
+            }
+            case 4 -> {
+                return "четверг";
+            }
+            case 5 -> {
+                return "пятница";
+            }
+            case 6 -> {
+                return "суббота";
+            }
+            case 7 -> {
+                return "воскресенье";
+            }
+            default -> {
+            }
+        }
+        return "Это не день недели";
+    }
+
 }
