@@ -4,6 +4,8 @@ public class Main {
         System.out.println("Дробная часть числа: " + Fraction.fraction(4.898797897979899790));
         //task 2
         System.out.println("Сумма 2х последних знаков числа: " + SumLastNums.sumLastNums(105667));
+        //task 3
+        System.out.println("Преобразование символа в цифру: " + CharToNum.charToNum('9'));
     }
 
 
