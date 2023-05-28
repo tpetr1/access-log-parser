@@ -39,4 +39,8 @@ public class MathFunc {
         if ((x % 5 == 0) && (x % 3 == 0)) return false;
         return (x % 5 == 0) || (x % 3 == 0);
     }
+
+    public static boolean magic6(int x, int y){
+        return x == 6 || y == 6 || (x + y) == 6 || (x - y) == 6 || (y - x) == 6;
+    }
 }

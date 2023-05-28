@@ -60,6 +60,10 @@ public class Main {
         System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(5));
         System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(8));
         System.out.println("Число делится на 3 или на 5?: " + MathFunc.is35(15));
+        //part2 task 9
+        System.out.println("Результат magic6: " + MathFunc.magic6(5,7));
+        System.out.println("Результат magic6: " + MathFunc.magic6(8,2));
+        System.out.println("Результат magic6: " + MathFunc.magic6(1,6));
     }
 
     public static int lastNumSum(int a, int b){
