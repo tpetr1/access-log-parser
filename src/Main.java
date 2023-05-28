@@ -38,6 +38,9 @@ public class Main {
         //part2 task 2
         System.out.println("Результат деления X на Y: " + MathFunc.safeDiv(3,0));
         System.out.println("Результат деления X на Y: " + MathFunc.safeDiv(6,4));
+        //part2 task 3
+        System.out.println("Максимальное число и 2х: " + MathFunc.max(3,10));
+        System.out.println("Максимальное число и 2х: " + MathFunc.max(6,4));
     }
 
     public static int lastNumSum(int a, int b){
