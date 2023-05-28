@@ -53,6 +53,9 @@ public class Main {
         System.out.println("Сумма 2х равна 3му?: " + MathFunc.sum3(5,7,2));
         System.out.println("Сумма 2х равна 3му?: " + MathFunc.sum3(8,-1, 4));
         System.out.println("Сумма 2х равна 3му?: " + MathFunc.sum3(6,3, 3));
+        //part2 task 7
+        System.out.println("Сумма 2х: " + MathFunc.sum2(5,7));
+        System.out.println("Сумма 2х: " + MathFunc.sum2(8,-1));
     }
 
     public static int lastNumSum(int a, int b){
