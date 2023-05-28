@@ -25,6 +25,10 @@ public class Main {
         System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(4,8));
         System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(10,8));
         System.out.println("Деление без остатка?: " + IsDivisor.isDivisor(10,5));
+        //task 9
+        System.out.println("Все числа равны?: " + IsEqual.isEqual(2,2,2));
+        System.out.println("Все числа равны?: " + IsEqual.isEqual(2,6,2));
+        System.out.println("Все числа равны?: " + IsEqual.isEqual(2,2,6));
     }
 
 
