@@ -19,4 +19,10 @@ public class MathFunc {
         if (x<y) return x + " < " + y;
         return x + " == " + y;
     }
+
+    public static int max3(int x, int y, int z){
+        if ((x <= y) && (y > z)) return y;
+        if ((x <= z) && (y < z)) return z;
+        return x;
+    }
 }

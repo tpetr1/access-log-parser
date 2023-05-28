@@ -45,6 +45,10 @@ public class Main {
         System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(3,10));
         System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(6,4));
         System.out.println("Больше, меньше, равно: " + MathFunc.makeDecision(6,6));
+        //part2 task 4
+        System.out.println("Максимальное из 3х: " + MathFunc.max3(3,10,16));
+        System.out.println("Максимальное из 3х: " + MathFunc.max3(6,4, 2));
+        System.out.println("Максимальное из 3х: " + MathFunc.max3(6,16, 3));
     }
 
     public static int lastNumSum(int a, int b){
