@@ -29,7 +29,13 @@ public class Main {
         System.out.println("Все числа равны?: " + IsEqual.isEqual(2,2,2));
         System.out.println("Все числа равны?: " + IsEqual.isEqual(2,6,2));
         System.out.println("Все числа равны?: " + IsEqual.isEqual(2,2,6));
+        //task 10
+        System.out.println("Сумма 5 чисел: "
+                + lastNumSum(lastNumSum(lastNumSum(lastNumSum(5,11),123),14),1));
     }
 
+    public static int lastNumSum(int a, int b){
+        return (a%10)+(b%10);
+    }
 
 }
