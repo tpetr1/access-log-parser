@@ -17,6 +17,10 @@ public class Main {
         System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('Z'));
         System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('d'));
         System.out.println("Буква в верхнем регистре?: " + IsUpperCase.isUpperCase('6'));
+        //task 7
+        System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,7));
+        System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,3));
+        System.out.println("Число входит в диапазон?: " + IsInRange.isInRange(4,7,8));
     }
 
 
