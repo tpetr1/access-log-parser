@@ -9,6 +9,10 @@ public class Main {
         //task 4
         System.out.println("Число положительное?: " + IsPositive.isPositive(9));
         System.out.println("Число положительное?: " + IsPositive.isPositive(-129));
+        //task 5
+        System.out.println("Число двузначное?: " + Is2Digits.is2Digits(9));
+        System.out.println("Число двузначное?: " + Is2Digits.is2Digits(129));
+        System.out.println("Число двузначное?: " + Is2Digits.is2Digits(99));
     }
 
 
