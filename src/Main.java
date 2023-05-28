@@ -35,6 +35,9 @@ public class Main {
         //part2 task 1
         System.out.println("Модуль числа: " + MathFunc.abs(-3));
         System.out.println("Модуль числа: " + MathFunc.abs(6));
+        //part2 task 2
+        System.out.println("Результат деления X на Y: " + MathFunc.safeDiv(3,0));
+        System.out.println("Результат деления X на Y: " + MathFunc.safeDiv(6,4));
     }
 
     public static int lastNumSum(int a, int b){

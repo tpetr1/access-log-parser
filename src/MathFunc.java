@@ -4,4 +4,9 @@ public class MathFunc {
             x = -x;
         return x;
     }
+
+    public static int safeDiv(int x, int y) {
+        if (y == 0) return 0;
+        return x / y;
+    }
 }
