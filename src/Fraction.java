@@ -1,6 +1,10 @@
+import java.math.BigDecimal;
+
 public class Fraction {
     public static double fraction(double x){
-        int t = (int) x;
-        return x - t;
+        BigDecimal t = BigDecimal.valueOf((int) x);
+        BigDecimal d = BigDecimal.valueOf(x);
+        BigDecimal res = d.subtract(t);
+        return res.doubleValue();
     }
 }
