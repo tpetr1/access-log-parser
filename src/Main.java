@@ -74,10 +74,12 @@ public class Main {
         //part2 task 12
         MathFunc.printDays("вторник");
         MathFunc.printDays("пятн");
-        //part 2 task 1
+        //part 3 task 1
         System.out.println(Arrays.listNums(17));
-        //part 2 task 2
+        //part 3 task 2
         System.out.println(Arrays.reverseListNums(17));
+        //part 3 task 3
+        System.out.println(Arrays.chet(17));
     }
 
     public static int lastNumSum(int a, int b){

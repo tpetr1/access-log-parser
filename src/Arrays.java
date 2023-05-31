@@ -12,4 +12,11 @@ public class Arrays {
             res += i + " ";
         return res;
     }
+
+    public static String chet(int x){
+        String res = "";
+        for (int i = 0; i <= x;i+=2)
+            res += i + " ";
+        return res;
+    }
 }
