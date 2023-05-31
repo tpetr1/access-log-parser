@@ -74,6 +74,8 @@ public class Main {
         //part2 task 12
         MathFunc.printDays("вторник");
         MathFunc.printDays("пятн");
+        //part 2 task 1
+        System.out.println(Arrays.listNums(17));
     }
 
     public static int lastNumSum(int a, int b){
