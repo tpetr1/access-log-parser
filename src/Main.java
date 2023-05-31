@@ -76,6 +76,8 @@ public class Main {
         MathFunc.printDays("пятн");
         //part 2 task 1
         System.out.println(Arrays.listNums(17));
+        //part 2 task 2
+        System.out.println(Arrays.reverseListNums(17));
     }
 
     public static int lastNumSum(int a, int b){
