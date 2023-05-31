@@ -51,7 +51,9 @@ public class MathFunc {
                 if (x % 100 != 11) return x + " год";
                 break;
             case 2, 3, 4:
-                if ((x % 100 != 12) || (x % 100 != 13) || (x % 100 != 14)) return x + " года";
+                if (x % 100 != 12)
+                    if (x % 100 != 13)
+                        if (x % 100 != 14) return x + " года";
                 break;
             default:
                 break;

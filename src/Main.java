@@ -67,7 +67,7 @@ public class Main {
         //part2 task 10
         System.out.println("Age: " + MathFunc.age(5));
         System.out.println("Age: " + MathFunc.age(31));
-        System.out.println("Age: " + MathFunc.age(44));
+        System.out.println("Age: " + MathFunc.age(102));
         System.out.println("Age: " + MathFunc.age(111));
         //part2 task 11
         System.out.println("Day: " + MathFunc.day(5));
