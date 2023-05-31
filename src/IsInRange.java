@@ -1,5 +1,7 @@
 public class IsInRange {
     public static boolean isInRange(int a, int b, int num){
-        return (num >= a) && (num <= b);
+        if (a<b)
+            return (num >= a) && (num <= b);
+        return (num >= b) && (num <= a);
     }
 }
