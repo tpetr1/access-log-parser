@@ -88,6 +88,8 @@ public class Main {
         System.out.println(Arrays.equalNum(5555555));
         //part 3 task 7
         Arrays.square(5);
+        //part 3 task 8
+        Arrays.leftTriangle(5);
     }
 
     public static int lastNumSum(int a, int b){
