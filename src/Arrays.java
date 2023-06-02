@@ -27,4 +27,12 @@ public class Arrays {
         }
         return res;
     }
+
+    public static int numLen(long x){
+        int i;
+        for (i=0; x > 0;i++){
+            x /= 10;
+        }
+        return i;
+    }
 }
