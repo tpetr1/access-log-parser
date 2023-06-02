@@ -35,4 +35,13 @@ public class Arrays {
         }
         return i;
     }
+
+    public static boolean equalNum(int x){
+        while (x>0){
+            int t = x % 10;
+            x = x / 10;
+            if (((x % 10) != t) && (x > 0)) return false;
+        }
+        return true;
+    }
 }
