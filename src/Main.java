@@ -92,6 +92,8 @@ public class Main {
         Arrays.leftTriangle(5);
         //part 3 task 9
         Arrays.rightTriangle(20);
+        //part 3 task 10
+        Arrays.guessGame();
     }
 
     public static int lastNumSum(int a, int b){
