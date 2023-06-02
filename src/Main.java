@@ -80,6 +80,8 @@ public class Main {
         System.out.println(Arrays.reverseListNums(17));
         //part 3 task 3
         System.out.println(Arrays.chet(17));
+        //part 3 task 4
+        System.out.println(Arrays.pow(2,4));
     }
 
     public static int lastNumSum(int a, int b){
