@@ -90,6 +90,8 @@ public class Main {
         Arrays.square(5);
         //part 3 task 8
         Arrays.leftTriangle(5);
+        //part 3 task 9
+        Arrays.rightTriangle(20);
     }
 
     public static int lastNumSum(int a, int b){

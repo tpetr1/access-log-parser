@@ -62,4 +62,16 @@ public class Arrays {
             System.out.println();
         }
     }
+
+    public static void rightTriangle(int x){
+        for (int i = 0; i < x; i++){
+            for (int j = 0; j < x; j++){
+                if (j>=(x-i-1))
+                    System.out.print('*');
+                else
+                    System.out.print(' ');
+            }
+            System.out.println();
+        }
+    }
 }
