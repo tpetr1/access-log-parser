@@ -128,4 +128,13 @@ public class Arrays {
         return arr[idx];
     }
 
+    public static int countPositive(int[] arr){
+        int count = 0;
+        for (int i = 1; i < arr.length; i++){
+            if (arr[i] >= 0) {
+               count++;
+            }
+        }
+        return count;
+    }
 }
