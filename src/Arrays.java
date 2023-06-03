@@ -112,4 +112,20 @@ public class Arrays {
         return -1;
     }
 
+    public static int maxAbs(int[] arr){
+        int max = arr[0];
+        int idx = 0;
+        for (int i = 1; i < arr.length; i++){
+            int t = arr[i];
+            if (t < 0) {
+                t *= -1;
+            }
+            if (t > max){
+                max = t;
+                idx = i;
+            }
+        }
+        return arr[idx];
+    }
+
 }

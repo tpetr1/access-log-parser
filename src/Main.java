@@ -99,6 +99,9 @@ public class Main {
         System.out.println(Arrays.findFirst(arr, 2));
         //part 4 task 2
         System.out.println(Arrays.findLast(arr, 2));
+        //part 4 task 3
+        int [] arr2 = {1,-2,-7,4,2,2,5};
+        System.out.println(Arrays.maxAbs(arr2));
     }
 
     public static int lastNumSum(int a, int b){
