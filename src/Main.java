@@ -124,6 +124,9 @@ public class Main {
         //part 4 task 10
         System.out.println(java.util.Arrays.toString(arr2));
         System.out.println(java.util.Arrays.toString(Arrays.deleteNegative(arr2)));
+        //part 4 task 11
+        System.out.println(java.util.Arrays.toString(arr2));
+        System.out.println(java.util.Arrays.toString(Arrays.add(arr2,7,5)));
     }
 
     public static int lastNumSum(int a, int b){

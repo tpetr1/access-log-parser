@@ -206,4 +206,17 @@ public class Arrays {
         }
         return res;
     }
+
+    public static int[] add(int[] arr, int x, int pos){
+        int[] temp = new int[arr.length+1];
+        for (int i = 0; i < arr.length+1; i++){
+            if (i < pos)
+                temp[i] = arr[i];
+            if (i == pos)
+                temp[i] = x;
+            if (i > pos)
+                temp[i] = arr[i-1];
+        }
+        return temp;
+    }
 }
