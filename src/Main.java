@@ -104,6 +104,10 @@ public class Main {
         System.out.println(Arrays.maxAbs(arr2));
         //part 4 task 4
         System.out.println(Arrays.countPositive(arr2));
+        //part 4 task 5
+        int [] arr3 = {1,-2,-7,-7,-2,1};
+        System.out.println(Arrays.palindrom(arr2));
+        System.out.println(Arrays.palindrom(arr3));
     }
 
     public static int lastNumSum(int a, int b){
