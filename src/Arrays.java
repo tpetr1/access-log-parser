@@ -219,4 +219,18 @@ public class Arrays {
         }
         return temp;
     }
+
+    public static int[] add(int[] arr, int[] ins, int pos){
+        int[] temp = new int[arr.length+ins.length];
+        for (int i = 0; i < temp.length; i++){
+            if (i < pos)
+                temp[i] = arr[i];
+            if ((i >= pos) && (i < (pos + ins.length)))
+                temp[i] = ins[i-pos];
+            if (i >= (pos + ins.length))
+                temp[i] = arr[i-ins.length];
+        }
+        return temp;
+
+    }
 }

@@ -127,6 +127,10 @@ public class Main {
         //part 4 task 11
         System.out.println(java.util.Arrays.toString(arr2));
         System.out.println(java.util.Arrays.toString(Arrays.add(arr2,7,5)));
+        //part 4 task 12
+        System.out.println(java.util.Arrays.toString(arr2));
+        int[] arr4 = {19,9,999};
+        System.out.println(java.util.Arrays.toString(Arrays.add(arr2,arr4,5)));
     }
 
     public static int lastNumSum(int a, int b){
