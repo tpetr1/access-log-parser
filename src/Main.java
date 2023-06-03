@@ -112,6 +112,9 @@ public class Main {
         System.out.println(java.util.Arrays.toString(arr));
         Arrays.reverse(arr);
         System.out.println(java.util.Arrays.toString(arr));
+        //part 4 task 7
+        System.out.println(java.util.Arrays.toString(arr));
+        System.out.println(java.util.Arrays.toString(Arrays.reverseBack(arr)));
     }
 
     public static int lastNumSum(int a, int b){

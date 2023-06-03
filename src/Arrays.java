@@ -152,4 +152,12 @@ public class Arrays {
             arr[i] = temp[j];
         }
     }
+
+    public static int[] reverseBack(int[] arr){
+        int[] temp = new int[arr.length];
+        for (int i = 0, j = temp.length-1; i < temp.length; i++, j--){
+            temp[i] = arr[j];
+        }
+        return temp;
+    }
 }
