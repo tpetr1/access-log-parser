@@ -97,6 +97,8 @@ public class Main {
         //part 4 task 1
         int [] arr = {1, 2, 3, 4, 2, 2, 5};
         System.out.println(Arrays.findFirst(arr, 2));
+        //part 4 task 2
+        System.out.println(Arrays.findLast(arr, 2));
     }
 
     public static int lastNumSum(int a, int b){
