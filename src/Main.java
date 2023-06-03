@@ -93,7 +93,10 @@ public class Main {
         //part 3 task 9
         Arrays.rightTriangle(20);
         //part 3 task 10
-        Arrays.guessGame();
+        //Arrays.guessGame();
+        //part 4 task 1
+        int [] arr = {1, 2, 3, 4, 2, 2, 5};
+        System.out.println(Arrays.findFirst(arr, 2));
     }
 
     public static int lastNumSum(int a, int b){
