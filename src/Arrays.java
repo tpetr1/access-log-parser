@@ -160,4 +160,22 @@ public class Arrays {
         }
         return temp;
     }
+
+    public static int[] concat(int[] arr1, int[] arr2){
+        int[] temp = new int[arr1.length+arr2.length];
+        boolean f = true;
+        int i = 0;
+        while (f){
+            if (i < arr1.length) {
+                temp[i] = arr1[i];
+            }
+            if (i >= arr1.length) {
+                temp[i] = arr2[i - arr1.length];
+            }
+            if (i == (arr1.length+arr2.length-1))
+                f = false;
+            i++;
+        }
+        return temp;
+    }
 }
