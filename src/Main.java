@@ -108,6 +108,10 @@ public class Main {
         int [] arr3 = {1,-2,-7,-7,-2,1};
         System.out.println(Arrays.palindrom(arr2));
         System.out.println(Arrays.palindrom(arr3));
+        //part 4 task 6
+        System.out.println(java.util.Arrays.toString(arr));
+        Arrays.reverse(arr);
+        System.out.println(java.util.Arrays.toString(arr));
     }
 
     public static int lastNumSum(int a, int b){

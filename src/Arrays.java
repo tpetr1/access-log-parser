@@ -144,4 +144,12 @@ public class Arrays {
         }
         return true;
     }
+
+    public static void reverse(int[] arr){
+        int[] temp = new int[arr.length];
+        System.arraycopy(arr, 0, temp, 0, arr.length);
+        for (int i = 0, j = temp.length-1; i < temp.length; i++, j--){
+            arr[i] = temp[j];
+        }
+    }
 }
