@@ -118,6 +118,9 @@ public class Main {
         //part 4 task 8
         System.out.println(java.util.Arrays.toString(arr) + " " + java.util.Arrays.toString(arr2));
         System.out.println(java.util.Arrays.toString(Arrays.concat(arr,arr2)));
+        //part 4 task 9
+        System.out.println(java.util.Arrays.toString(arr));
+        System.out.println(java.util.Arrays.toString(Arrays.findAll(arr,2)));
     }
 
     public static int lastNumSum(int a, int b){

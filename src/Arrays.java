@@ -178,4 +178,18 @@ public class Arrays {
         }
         return temp;
     }
+
+    public static int[] findAll(int[] arr, int x){
+        int[] temp = new int[arr.length];
+        int j = 0;
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] == x)
+                temp[j++] = i;
+        }
+        int[] res = new int[j];
+        for (int i = 0; i < j; i++){
+            res[i] = temp[i];
+        }
+        return res;
+    }
 }
