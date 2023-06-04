@@ -12,7 +12,11 @@ public class Main {
             File file = new File(path);
             boolean fileExists = file.exists();
             boolean isDirectory = file.isDirectory();
-            if (fileExists || isDirectory) {
+            if (!fileExists) {
+                System.out.println("the file does not exist");
+                continue;
+            }
+            if (isDirectory) {
                 System.out.println("the file does not exist");
                 continue;
             }
