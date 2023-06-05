@@ -102,6 +102,8 @@ public class Main {
         //part 4 task 3
         int [] arr2 = {1,-2,-7,4,2,2,5};
         System.out.println(Arrays.maxAbs(arr2));
+        int [] arr22 = {-7,-5};
+        System.out.println(Arrays.maxAbs(arr22));
         //part 4 task 4
         System.out.println(Arrays.countPositive(arr2));
         //part 4 task 5
