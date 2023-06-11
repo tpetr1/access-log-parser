@@ -4,24 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int count = 1;
-        System.out.println("Случайное число от 0 до 1: " + Math.random());
-
-        while (true){
-            String path = new Scanner(System.in).nextLine();
-            File file = new File(path);
-            boolean fileExists = file.exists();
-            boolean isDirectory = file.isDirectory();
-            if (!fileExists) {
-                System.out.println("the file does not exist");
-                continue;
-            }
-            if (isDirectory) {
-                System.out.println("the file does not exist");
-                continue;
-            }
-            System.out.println("The path is specified correctly");
-            System.out.println("This is file number " + count++);
-        }
+        Point a;
+        System.out.println(a = new Point(1,3));
+        Point b;
+        System.out.println(b = new Point(1,3));
+        Point c;
+        System.out.println(c = new Point(5,8));
+        System.out.println(a == b);
+        System.out.println(b == c);
     }
 }
