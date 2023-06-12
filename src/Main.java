@@ -1,5 +1,6 @@
 import javax.sound.midi.Soundbank;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -33,5 +34,35 @@ public class Main {
         l3 = new Line(c,d);
         System.out.println(l3.toString());
         System.out.println(l1.length() + l2.length() + l3.length());
+
+       // Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
+        Point p1 = new Point(1,5);
+        Point p2 = new Point(2,8);
+        Point p3 = new Point(5,3);
+        Point p4 = new Point(8,9);
+        Polyline polyl;
+        polyl = new Polyline();
+        polyl.setPoint(p1);
+        polyl.setPoint(p2);
+        polyl.setPoint(p3);
+        polyl.setPoint(p4);
+        //Рассчитать длину Ломаной
+        System.out.println(polyl.length());
+        //Получить у Ломаной массив Линий
+        System.out.println(polyl.toLine().toString());
+        //Рассчитать длину массива Линий
+        double s = 0;
+        for (int i =  0; i < polyl.toLine().size(); i++) {
+            s += polyl.toLine().get(i).length();
+        }
+        //Сравнить длину Ломаной и массива Линий: они должны совпасть
+        System.out.println(s == polyl.length());
+        //Сдвинуть координату Точки {2,8} таким образом, чтобы она стала иметь значение {12,8}. Если изменения отразились в данной точке, в Ломаной и в двух Линиях массива (из пункта 3), то задача решена верно
+        p2 = new Point(12,8);
+        polyl.changePoint(1,p2);
+        System.out.println(polyl.getPoint(1));
+        System.out.println(polyl.toLine());
+        System.out.println(polyl);
+
     }
 }
