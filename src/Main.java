@@ -4,24 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int count = 1;
-        System.out.println("Случайное число от 0 до 1: " + Math.random());
-
-        while (true){
-            String path = new Scanner(System.in).nextLine();
-            File file = new File(path);
-            boolean fileExists = file.exists();
-            boolean isDirectory = file.isDirectory();
-            if (!fileExists) {
-                System.out.println("the file does not exist");
-                continue;
-            }
-            if (isDirectory) {
-                System.out.println("the file does not exist");
-                continue;
-            }
-            System.out.println("The path is specified correctly");
-            System.out.println("This is file number " + count++);
-        }
+        Fraction f1 = new Fraction(1,3);
+        Fraction f2 = new Fraction(2,5);
+        Fraction f3 = new Fraction(7,8);
+        System.out.println(f1.sum(f2).sum(f3).minus(5).toString());
     }
 }
