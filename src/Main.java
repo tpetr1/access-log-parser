@@ -29,10 +29,13 @@ public class Main {
         Выведите текстовое представление Линии 3 на экран после изменения её состояния
         Рассчитайте суммарную длину всех трех линий и выведите её на экран*/
         System.out.println(l3.toString());
-        c = new Point(3,4);
-        d = new Point(13, 14);
-        l3 = new Line(c,d);
+        l3.point1.x = 3;
+        l3.point1.y = 4;
+        l3.point2.x = 13;
+        l3.point2.y = 14;
         System.out.println(l3.toString());
+        System.out.println(l2.toString());
+        System.out.println(l1.toString());
         System.out.println(l1.length() + l2.length() + l3.length());
 
        // Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
