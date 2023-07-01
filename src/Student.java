@@ -15,7 +15,7 @@ public class Student {
     }
 
     public void addEstimate(int e){
-        if ((e <= 5) && (e >= 2)) this.estimates.add(e);
+        if ((e <= 5) && (e >= 2)) estimates.add(e);
     }
 
     @Override

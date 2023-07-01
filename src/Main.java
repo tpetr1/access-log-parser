@@ -11,6 +11,7 @@ public class Main {
         System.out.println(f1.sum(f2).sum(f3).minus(5).toString());
 
         Student s = new Student("Иван");
+        System.out.println(s.toString());
         s.addEstimate(5);
         s.addEstimate(2);
         s.addEstimate(7);
