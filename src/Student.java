@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
 public class Student {
-    final String name;
+    public final String name;
+
+    public ArrayList<Integer> getEstimates() {
+        return estimates;
+    }
+
     private ArrayList<Integer> estimates = new ArrayList<>();
     public Student(String name) {
         this.name = name;

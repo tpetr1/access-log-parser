@@ -11,14 +11,14 @@ public class Main {
         System.out.println(f1.sum(f2).sum(f3).minus(5).toString());
 
         Student s = new Student("Иван");
-        System.out.println(s.toString());
+        System.out.println(s.getEstimates());
         s.addEstimate(5);
         s.addEstimate(2);
         s.addEstimate(7);
         s.addEstimate(4);
         s.addEstimate(5);
         s.addEstimate(2);
-        System.out.println(s.toString());
+        System.out.println(s.name + ": " +  s.getEstimates());
         ArrayList<Integer> a = new ArrayList<>();
         a.add(2);
         a.add(5);
