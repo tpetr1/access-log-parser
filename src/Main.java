@@ -76,5 +76,17 @@ public class Main {
         polyl_closed.setPoint(p3);
         polyl_closed.setPoint(p4);
         System.out.println(polyl_closed.length());
+
+        System.out.println(l(polyl));
+        System.out.println(l(polyl_closed));
+        System.out.println(l(l1));
     }
+
+    static double l(Lengthable lin){
+        return lin.length();
+    }
+}
+
+interface Lengthable{
+    double length();
 }

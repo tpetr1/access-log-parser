@@ -1,4 +1,4 @@
-public class Line {
+public class Line implements Lengthable{
     //int x1,x2,y1,y2;
     Point point1;
     Point point2;

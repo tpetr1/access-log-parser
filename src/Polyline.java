@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Polyline {
+public class Polyline implements Lengthable {
     ArrayList<Point> arrayPoints  = new ArrayList<>();
 
     public Polyline() {
