@@ -2,6 +2,7 @@ package ru.courses.main;
 
 import ru.courses.arithmetic.newtype.Fraction;
 import ru.courses.geometry.Lengthable;
+import ru.courses.geometry.Point;
 
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
@@ -39,6 +40,11 @@ public class Main {
     }
     public static void main(String[] args) {
         System.out.println(rate(args[0], args[1]));
+
+        Point p_geom = new Point(2,4);
+        java.awt.Point p_awt = new java.awt.Point(3,7);
+        System.out.println(p_geom);
+        System.out.println(p_awt);
     }
 }
 

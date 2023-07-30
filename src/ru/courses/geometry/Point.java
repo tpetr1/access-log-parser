@@ -14,7 +14,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point" + x + ", " + y;
+        return "{" + x + "," + y + "}";
     }
     public boolean Equal(Point a, Point b){
         return a.equals(b);
