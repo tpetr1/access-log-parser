@@ -67,5 +67,8 @@ public class Main {
         System.out.println(polyl.toLine());
         System.out.println(polyl);
 
+        Point3D p3d = new Point3D(1,5,2);
+        System.out.println(p3d);
+
     }
 }

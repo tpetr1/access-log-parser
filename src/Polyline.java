@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Polyline {
-    ArrayList<Point> arrayPoints;
+    ArrayList<Point> arrayPoints  = new ArrayList<>();
 
     public Polyline() {
     }
