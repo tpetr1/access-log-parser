@@ -80,6 +80,8 @@ public class Main {
         System.out.println(l(polyl));
         System.out.println(l(polyl_closed));
         System.out.println(l(l1));
+
+        System.out.println(new Fraction(12,17));
     }
 
     static double l(Lengthable lin){
