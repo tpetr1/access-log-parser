@@ -70,5 +70,11 @@ public class Main {
         Point3D p3d = new Point3D(1,5,2);
         System.out.println(p3d);
 
+        ClosedPolyline polyl_closed = new ClosedPolyline();
+        polyl_closed.setPoint(p1);
+        polyl_closed.setPoint(p2);
+        polyl_closed.setPoint(p3);
+        polyl_closed.setPoint(p4);
+        System.out.println(polyl_closed.length());
     }
 }
