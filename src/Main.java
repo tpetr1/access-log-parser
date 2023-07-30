@@ -82,10 +82,31 @@ public class Main {
         System.out.println(l(l1));
 
         System.out.println(new Fraction(12,17));
+
+        System.out.println(sum(2, new Fraction(3,5), 2.3));
+        System.out.println(sum(3.6, new Fraction(49,12), 3, new Fraction(3,2)));
+        System.out.println(sum(new Fraction(1,3), 1));
     }
 
     static double l(Lengthable lin){
         return lin.length();
+    }
+
+    static double sum(Number... numbers){
+        double sum = 0;
+        for (int i = 0; i < numbers.length; i++){
+            System.out.println(numbers[i]);
+            if (numbers[i].getClass() == Fraction.class){
+                sum += (numbers[i].doubleValue());
+            };
+            if (numbers[i].getClass() == Integer.class){
+                sum += (double) ((Integer)numbers[i]);
+            };
+            if (numbers[i].getClass() == Double.class){
+                sum += (double) numbers[i];
+            };
+        }
+        return sum;
     }
 }
 
