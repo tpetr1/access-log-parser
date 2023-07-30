@@ -1,3 +1,5 @@
+package ru.courses.geometry;
+
 public class ClosedPolyline extends Polyline {
     @Override
     public double length() {

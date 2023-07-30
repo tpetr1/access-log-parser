@@ -1,3 +1,5 @@
+package ru.courses.arithmetic;
+
 public class SumLastNums {
     public static int sumLastNums(int x){
 

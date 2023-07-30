@@ -1,3 +1,5 @@
+package ru.courses.arrayfunc;
+
 public class Arrays {
     public static String listNums(int x) {
         String res = "";

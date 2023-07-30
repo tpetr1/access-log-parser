@@ -1,7 +1,16 @@
-import javax.sound.midi.Soundbank;
-import java.io.File;
+package ru.courses.main;
+
+import ru.courses.arithmetic.*;
+import ru.courses.arithmetic.newtype.Fraction;
+import ru.courses.arithmetic.newtype.Fraction2;
+import ru.courses.arrayfunc.Arrays;
+import ru.courses.character.CharToNum;
+import ru.courses.character.IsUpperCase;
+import ru.courses.geometry.*;
+import ru.courses.arithmetic.mathfunc.MathFunc;
+import ru.courses.student.Student;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -139,25 +148,25 @@ public class Main {
         int[] arr4 = {19,9,999};
         System.out.println(java.util.Arrays.toString(Arrays.add(arr2,arr4,5)));
       
-        Fraction f1 = new Fraction(1,3);
-        Fraction f2 = new Fraction(2,5);
-        Fraction f3 = new Fraction(7,8);
+        Fraction2 f1 = new Fraction2(1,3);
+        Fraction2 f2 = new Fraction2(2,5);
+        Fraction2 f3 = new Fraction2(7,8);
         System.out.println(f1.sum(f2).sum(f3).minus(5).toString());
 
-        Student s = new Student("Иван");
-        System.out.println(s.getEstimates());
-        s.addEstimate(5);
-        s.addEstimate(2);
-        s.addEstimate(7);
-        s.addEstimate(4);
-        s.addEstimate(5);
-        s.addEstimate(2);
-        System.out.println(s.name + ": " +  s.getEstimates());
-        ArrayList<Integer> a = new ArrayList<>();
-        a.add(2);
-        a.add(5);
-        a.add(6);
-        Student s2 = new Student("Рома", a);
+        Student st = new Student("Иван");
+        System.out.println(st.getEstimates());
+        st.addEstimate(5);
+        st.addEstimate(2);
+        st.addEstimate(7);
+        st.addEstimate(4);
+        st.addEstimate(5);
+        st.addEstimate(2);
+        System.out.println(st.name + ": " +  st.getEstimates());
+        ArrayList<Integer> ar = new ArrayList<>();
+        ar.add(2);
+        ar.add(5);
+        ar.add(6);
+        Student s2 = new Student("Рома", ar);
         System.out.println(s2.toString());
       
       
@@ -269,6 +278,3 @@ public class Main {
     }
 }
 
-interface Lengthable{
-    double length();
-}

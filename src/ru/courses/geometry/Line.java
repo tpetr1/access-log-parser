@@ -1,7 +1,9 @@
-public class Line implements Lengthable{
+package ru.courses.geometry;
+
+public class Line implements Lengthable {
     //int x1,x2,y1,y2;
-    Point point1;
-    Point point2;
+    public Point point1;
+    public Point point2;
 
     public Line(int x1, int x2, int y1, int y2) {
         Point point1 = new Point(x1,y1);

@@ -1,3 +1,7 @@
+package ru.courses.way;
+
+import ru.courses.way.City;
+
 public class Road {
     City city;
     String price;

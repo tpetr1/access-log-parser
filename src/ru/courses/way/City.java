@@ -1,3 +1,5 @@
+package ru.courses.way;
+
 import java.util.ArrayList;
 
 public class City {
