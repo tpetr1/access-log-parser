@@ -38,13 +38,17 @@ public class Main {
         int b = parseInt(y);
         return pow(a,b);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         System.out.println(rate(args[0], args[1]));
 
         Point p_geom = new Point(2,4);
         java.awt.Point p_awt = new java.awt.Point(3,7);
         System.out.println(p_geom);
         System.out.println(p_awt);
+
+        Point p1 = new Point(13,2);
+        Point p2 = p1.clone();
+        System.out.println(p1.equals(p2));
     }
 }
 
