@@ -2,6 +2,7 @@ package ru.courses.main;
 
 import ru.courses.arithmetic.newtype.Fraction;
 import ru.courses.geometry.Lengthable;
+import ru.courses.geometry.Line;
 import ru.courses.geometry.Point;
 
 import static java.lang.Integer.*;
@@ -49,6 +50,16 @@ public class Main {
         Point p1 = new Point(13,2);
         Point p2 = p1.clone();
         System.out.println(p1.equals(p2));
+        p2.x = 18;
+        p2.y = 10;
+        System.out.println("Точка 1: " + p1 + "\n" + "Точка 2: " + p2);
+        Line l1 = new Line(p1,p2);
+        System.out.println(l1);
+        Line l2 = l1.clone();
+        System.out.println(l1.equals(l2));
+        p2.y = 17;
+        System.out.println(l1.equals(l2));
+
     }
 }
 

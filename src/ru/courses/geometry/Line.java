@@ -1,6 +1,8 @@
 package ru.courses.geometry;
 
-public class Line implements Lengthable {
+import java.util.Objects;
+
+public class Line implements Lengthable, Cloneable {
     //int x1,x2,y1,y2;
     public Point point1;
     public Point point2;
@@ -31,5 +33,31 @@ public class Line implements Lengthable {
                 "} до {" + point2.x +
                 ", " + point2.y +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Line line = (Line) o;
+
+        if (!point1.equals(line.point1)) return false;
+        return point2.equals(line.point2);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = point1.hashCode();
+        result = 31 * result + point2.hashCode();
+        return result;
+    }
+
+    @Override
+    public Line clone() throws CloneNotSupportedException {
+        Line l = (Line) super.clone();
+        l.point1 = l.point1.clone();
+        l.point2 = l.point2.clone();
+        return l;
     }
 }
