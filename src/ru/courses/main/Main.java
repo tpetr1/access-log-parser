@@ -1,6 +1,7 @@
 package ru.courses.main;
 
 import ru.courses.arithmetic.newtype.Fraction;
+import ru.courses.gastronomy.Sauce;
 import ru.courses.geometry.Lengthable;
 import ru.courses.geometry.Line;
 import ru.courses.geometry.Point;
@@ -8,6 +9,7 @@ import ru.courses.geometry.Polyline;
 
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
+import static ru.courses.gastronomy.Sharpness.VERY_HOT;
 
 public class Main {
     public static int lastNumSum(int a, int b) {
@@ -76,6 +78,10 @@ public class Main {
         pl2.setPoint(new Point(3,15));
         System.out.println("Ломаная 1: " + pl1 + "\n" + "Ломаная 2: " + pl2);
         System.out.println(pl1.equals(pl2));
+
+        Sauce s = new Sauce("Hot sauce", VERY_HOT);
+        System.out.println(s);
     }
+
 }
 
