@@ -53,4 +53,19 @@ public class Polyline implements Lengthable {
     public String toString() {
         return "Линия " + arrayPoints;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Polyline polyline = (Polyline) o;
+
+        return arrayPoints.equals(polyline.arrayPoints);
+    }
+
+    @Override
+    public int hashCode() {
+        return arrayPoints.hashCode();
+    }
 }

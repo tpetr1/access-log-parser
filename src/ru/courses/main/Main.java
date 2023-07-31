@@ -4,6 +4,7 @@ import ru.courses.arithmetic.newtype.Fraction;
 import ru.courses.geometry.Lengthable;
 import ru.courses.geometry.Line;
 import ru.courses.geometry.Point;
+import ru.courses.geometry.Polyline;
 
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
@@ -60,6 +61,21 @@ public class Main {
         p2.y = 17;
         System.out.println(l1.equals(l2));
 
+        Point p3 = new Point(5,15);
+        Point p4 = new Point(15,3);
+        Polyline pl1 = new Polyline();
+        Polyline pl2 = new Polyline();
+        pl1.setPoint(p1);
+        pl2.setPoint(p1);
+        pl1.setPoint(p2);
+        pl2.setPoint(p2);
+        pl1.setPoint(p3);
+        pl2.setPoint(p3);
+        pl1.setPoint(p4);
+        //pl2.setPoint(p4);
+        pl2.setPoint(new Point(3,15));
+        System.out.println("Ломаная 1: " + pl1 + "\n" + "Ломаная 2: " + pl2);
+        System.out.println(pl1.equals(pl2));
     }
 }
 
