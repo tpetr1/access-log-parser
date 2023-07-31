@@ -37,6 +37,7 @@ public class Main {
             }
             System.out.println("The path is specified correctly");
             System.out.println("This is file number " + count++);
+            Statistics s = new Statistics();
 
             try {
                 //чтение файла построчно
@@ -73,12 +74,14 @@ public class Main {
                             }
                         }
                     }
-
+                    s.addEntry(new LogEntry(line));
                 }
                 System.out.println("Count lines in file: " + count_line);
 
                 System.out.println("Share of requests GoogleBot: " + google_count*100.0/(double) count_line);
                 System.out.println("Share of requests YandexBot: " + yandex_count*100.0/(double) count_line);
+                System.out.println(s.getTrafficRate());
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
