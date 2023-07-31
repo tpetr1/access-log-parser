@@ -1,27 +1,36 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
+
     public static void main(String[] args) {
 
         int count = 1;
-        int count_line, min_length, max_length;
+        int count_line, yandex_count, google_count;
+        int max_allowed_len = 1024;
         System.out.println("Случайное число от 0 до 1: " + Math.random());
 
         while (true){
             count_line = 0;
-            min_length = Integer.MAX_VALUE;
-            max_length = 0;
+            yandex_count = 0;
+            google_count = 0;
+            Pattern pattern = Pattern.compile("([0-9,\\.]+) (-|\"\") (-|\"\") (\\[.+?\\]) (\".*?\") ([0-9]{3}) ([0-9]+?) (\".*?\") (\".*?\")");
+            //поиск файла по указанному пути
             String path = new Scanner(System.in).nextLine();
             File file = new File(path);
             boolean fileExists = file.exists();
             boolean isDirectory = file.isDirectory();
+            //если файл не существует
             if (!fileExists) {
                 System.out.println("the file does not exist");
                 continue;
             }
+            //если указана папка, а не файл
             if (isDirectory) {
                 System.out.println("the file does not exist");
                 continue;
@@ -30,28 +39,49 @@ public class Main {
             System.out.println("This is file number " + count++);
 
             try {
+                //чтение файла построчно
                 FileReader fileReader = new FileReader(path);
                 BufferedReader reader =
                         new BufferedReader(fileReader);
                 String line;
                 while ((line = reader.readLine()) != null) {
                     count_line++;
+                    String user_agent = null;
                     int length = line.length();
-                    if (length > 1024) throw new IllegalMaxLengthLine("Maximum line length exceeds 1024 characters");
-                    if (length < min_length) {
-                        min_length = length;
+                    //исключение если длина строки в файле превышает значение max_allowed_len
+                    if (length > max_allowed_len) throw
+                            new IllegalMaxLengthLine("Maximum line length exceeds "+max_allowed_len+" characters");
+                    Matcher m = pattern.matcher(line);
+                    if (m.find())
+                    {
+                        user_agent = m.group(9);
+                        int start_index = user_agent.indexOf("(");
+                        int end_index = user_agent.indexOf(")");
+                        if (start_index < 0 || end_index < 0) continue;
+                        String firstBrackets = user_agent.substring(start_index + 1, end_index);
+                        String[] parts = firstBrackets.split(";");
+                        if (parts.length >= 2) {
+                            String fragment = parts[1];
+                            int index = fragment.indexOf("/");
+                            if (index < 0) continue;
+                            String botName = fragment.substring(1, index);
+                            if (botName.equalsIgnoreCase("GoogleBot")) {
+                                google_count++;
+                            }
+                            if (botName.equalsIgnoreCase("YandexBot")) {
+                                yandex_count++;
+                            }
+                        }
                     }
-                    if (length > max_length) {
-                        max_length = length;
-                    }
+
                 }
                 System.out.println("Count lines in file: " + count_line);
-                System.out.println("Max length line: " + max_length);
-                System.out.println("Min length line: " + min_length);
+
+                System.out.println("Share of requests GoogleBot: " + google_count*100.0/(double) count_line);
+                System.out.println("Share of requests YandexBot: " + yandex_count*100.0/(double) count_line);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-
         }
     }
 
