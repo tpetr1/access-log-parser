@@ -1,13 +1,13 @@
-import java.io.File;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Sum {
     public static void main(String[] args) {
         double sum = 0;
+        String regex = "\\d+";
         for (int i = 0; i < args.length; i++) {
-            try {
+            if (args[i].matches(regex)) {
                 sum += Double.parseDouble(args[i]);
-            } catch (NumberFormatException ex){
+            } else {
                 sum += 0;
             }
         }
