@@ -4,6 +4,7 @@ public class UserAgent {
 
     public UserAgent(String str) {
         String browser1 = null;
+        String os1 = null;
         int indexFirefox = str.indexOf("Firefox/");
         int indexChrome = str.indexOf("(KHTML, like Gecko)");
         int indexOpera = str.indexOf("OPR/");
@@ -20,7 +21,6 @@ public class UserAgent {
         if (indexChrome != -1 && indexEdge != -1) browser1 = "Edge";
         if (indexChrome != -1 && indexSafari != -1 && indexMobile != -1) browser1 = "Safari";
         browser = browser1;
-        String os1 = null;
         if (indexWin != -1) os1 = "Windows";
         if (indexLinux != -1) os1 = "Linux";
         if (indexMac != -1) os1 = "Mac OS";
