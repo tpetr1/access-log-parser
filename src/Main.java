@@ -81,6 +81,9 @@ public class Main {
                 System.out.println(s.getOsStatistic());
                 System.out.println(s.getBrowserStatistic());
                 System.out.println(s.getNonExistentPages());
+                System.out.println(s.getRefDomains());
+                System.out.println(s.maxRequestsPerSecond());
+                System.out.println(s.maxVisitsUser());
 
             } catch (Exception ex) {
                 ex.printStackTrace();

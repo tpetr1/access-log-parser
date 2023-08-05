@@ -1,5 +1,10 @@
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 
 public class Statistics {
@@ -13,13 +18,14 @@ public class Statistics {
     HashMap<String, Integer> browserStatistic = new HashMap<>();
     int countVisits = 0;
     int errorCount = 0;
-    HashSet<String> uniqueUsers = new HashSet<>();
+    HashMap<String,Integer> uniqueUsers = new HashMap<>();
     HashMap<Integer, Integer> requestsPerSecond = new HashMap<>();
+    HashSet<String> refDomains = new HashSet<>();
 
     public Statistics() {
     }
 
-    public void addEntry(LogEntry le) {
+    public void addEntry(LogEntry le) throws URISyntaxException {
         totalTraffic += le.getResponce_size();
         if (le.datetime.isAfter(maxTime)) {
             maxTime = le.datetime;
@@ -56,10 +62,30 @@ public class Statistics {
         }
         if (!us.isBot()){
             countVisits++;
+            int timeInSeconds =
+                    (int)(le.datetime.atZone(ZoneId.of("Europe/Moscow")).toInstant().toEpochMilli()/1000);
+            if (!requestsPerSecond.containsKey(timeInSeconds)) {
+                requestsPerSecond.put(timeInSeconds, 1);
+            } else {
+                requestsPerSecond.replace(timeInSeconds, requestsPerSecond.get(timeInSeconds) + 1);
+            }
+            if (le.ip!=null) {
+                if (!uniqueUsers.containsKey(le.ip)) {
+                    uniqueUsers.put(le.ip,1);
+                } else {
+                    uniqueUsers.replace(le.ip,uniqueUsers.get(le.ip) + 1);
+                }
+            }
         }
-        if (le.ip!=null&&!us.isBot()) {
-            if (!uniqueUsers.contains(le.ip)) {
-                uniqueUsers.add(le.ip);
+
+        if(!le.referer.equals("-")){
+            String url = URLDecoder.decode(le.referer, StandardCharsets.UTF_8);
+            url = url.replace("+" , "%20");
+            url = url.replace(" " , "%20");
+            URI uri;
+            uri = new URI(url);
+            if (uri.getHost()!=null) {
+                refDomains.add(uri.getHost());
             }
         }
     }
@@ -113,5 +139,26 @@ public class Statistics {
 
     public double statisticsOneUserVisits() {
         return countVisits/(double)uniqueUsers.size();
+    }
+
+    public int maxRequestsPerSecond(){
+        int max = 0;
+        for (int i : requestsPerSecond.values()){
+            if (max < i) max = i;
+        }
+        return max;
+    }
+
+    public HashSet<String> getRefDomains() {
+        return refDomains;
+    }
+
+    public int maxVisitsUser(){
+        int max = 0;
+        System.out.println(uniqueUsers);
+        for (int i : uniqueUsers.values()){
+            if (max < i) max = i;
+        }
+        return max;
     }
 }

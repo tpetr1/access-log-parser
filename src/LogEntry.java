@@ -1,9 +1,6 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +16,7 @@ public class LogEntry {
     final String user_agent;
 
     public LogEntry(String str) {
-        Pattern pattern = Pattern.compile("([0-9,\\.]+) (-|\"\") (-|\"\") \\[(.+?)\\] \"(.*?)\" ([0-9]{3}) ([0-9]+?) (\".*?\") \"(.*?)\"");
+        Pattern pattern = Pattern.compile("([0-9,\\.]+) (-|\"\") (-|\"\") \\[(.+?)\\] \"(.*?)\" ([0-9]{3}) ([0-9]+?) \"(.*?)\" \"(.*?)\"");
         Matcher m = pattern.matcher(str);
         String ip1 = null;
         LocalDateTime datetime1 = null;
