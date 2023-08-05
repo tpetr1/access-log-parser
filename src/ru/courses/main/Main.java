@@ -7,6 +7,9 @@ import ru.courses.geometry.Line;
 import ru.courses.geometry.Point;
 import ru.courses.geometry.Polyline;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
 import static ru.courses.gastronomy.Sharpness.VERY_HOT;
@@ -43,7 +46,7 @@ public class Main {
         return pow(a,b);
     }
     public static void main(String[] args) throws Exception{
-        System.out.println(rate(args[0], args[1]));
+        //System.out.println(rate(args[0], args[1]));
 
         Point p_geom = new Point(2,4);
         java.awt.Point p_awt = new java.awt.Point(3,7);
@@ -81,6 +84,19 @@ public class Main {
 
         Sauce s = new Sauce("Hot sauce", VERY_HOT);
         System.out.println(s);
+
+        List<Integer> list= new ArrayList<>();
+        int N = Integer.parseInt(args[0]);
+        for (int i=0; i < N; i++){
+            list.add(i+1);
+        }
+        System.out.println(list);
+        for(int i = 0; i < N; i+=2){
+            int temp = list.get(i);
+            list.set(i,list.get(i+1));
+            list.set(i+1,temp);
+        }
+        System.out.println(list);
     }
 
 }
