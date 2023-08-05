@@ -6,12 +6,14 @@ public class Statistics {
 
     int totalTraffic = 0;
     LocalDateTime minTime = LocalDateTime.of(2047, 07, 06, 23, 30, 00);
-    ;
     LocalDateTime maxTime = LocalDateTime.of(1917, 07, 06, 23, 30, 00);
     HashSet<String> pages = new HashSet<>();
     HashMap<String, Integer> osStatistic = new HashMap<>();
     HashSet<String> nonExistentPages = new HashSet<>();
     HashMap<String, Integer> browserStatistic = new HashMap<>();
+    int countVisits = 0;
+    int errorCount = 0;
+    HashSet<String> uniqueUsers = new HashSet<>();
 
     public Statistics() {
     }
@@ -30,6 +32,10 @@ public class Statistics {
         if (le.responce_code == 404) {
             nonExistentPages.add(le.path);
         }
+        String a = Integer.toString(le.responce_code);
+        if (a.charAt(0) == '5' || a.charAt(0) == '4') {
+            errorCount++;
+        }
         UserAgent us = new UserAgent(le.user_agent);
         String os = us.getOs();
         if (os!=null) {
@@ -47,13 +53,23 @@ public class Statistics {
                 browserStatistic.replace(browser, browserStatistic.get(browser) + 1);
             }
         }
+        if (!us.isBot()){
+            countVisits++;
+        }
+        if (le.ip!=null) {
+            if (!uniqueUsers.contains(le.ip)) {
+                uniqueUsers.add(le.ip);
+            }
+        }
     }
 
     public double getTrafficRate() {
-        double d = (double) Duration.between(minTime, maxTime).toMillis() / 3600000.0;
-        return (double) totalTraffic / d;
+        return (double) totalTraffic / logDuration();
     }
 
+    private double logDuration(){
+        return (double) Duration.between(minTime, maxTime).toMillis() / 3600000.0;
+    }
     public HashSet<String> getPages() {
         return pages;
     }
@@ -84,5 +100,17 @@ public class Statistics {
             browserStat.put(s, (double) browserStatistic.get(s)/sum);
         }
         return browserStat;
+    }
+
+    public double averageNumberVisitsUser(){
+        return (double) countVisits/logDuration();
+    }
+
+    public double averageNumberErrors(){
+        return (double) errorCount/logDuration();
+    }
+
+    public double statisticsOneUserVisits() {
+        return countVisits/(double)uniqueUsers.size();
     }
 }
