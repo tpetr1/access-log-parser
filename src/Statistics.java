@@ -10,6 +10,8 @@ public class Statistics {
     LocalDateTime maxTime = LocalDateTime.of(1917, 07, 06, 23, 30, 00);
     HashSet<String> pages = new HashSet<>();
     HashMap<String, Integer> osStatistic = new HashMap<>();
+    HashSet<String> nonExistentPages = new HashSet<>();
+    HashMap<String, Integer> browserStatistic = new HashMap<>();
 
     public Statistics() {
     }
@@ -25,12 +27,24 @@ public class Statistics {
         if (le.responce_code == 200) {
             pages.add(le.path);
         }
-        String os = new UserAgent(le.user_agent).getOs();
+        if (le.responce_code == 404) {
+            nonExistentPages.add(le.path);
+        }
+        UserAgent us = new UserAgent(le.user_agent);
+        String os = us.getOs();
         if (os!=null) {
             if (!osStatistic.containsKey(os)) {
                 osStatistic.put(os, 1);
             } else {
                 osStatistic.replace(os, osStatistic.get(os) + 1);
+            }
+        }
+        String browser = us.getBrowser();
+        if (browser!=null) {
+            if (!browserStatistic.containsKey(browser)) {
+                browserStatistic.put(browser, 1);
+            } else {
+                browserStatistic.replace(browser, browserStatistic.get(browser) + 1);
             }
         }
     }
@@ -44,6 +58,10 @@ public class Statistics {
         return pages;
     }
 
+    public HashSet<String> getNonExistentPages() {
+        return nonExistentPages;
+    }
+
     public HashMap<String, Double> getOsStatistic() {
         HashMap<String, Double> osStat = new HashMap<>();
         double sum = 0;
@@ -54,5 +72,17 @@ public class Statistics {
             osStat.put(s, (double) osStatistic.get(s)/sum);
         }
         return osStat;
+    }
+
+    public HashMap<String, Double> getBrowserStatistic() {
+        HashMap<String, Double> browserStat = new HashMap<>();
+        double sum = 0;
+        for (String s : browserStatistic.keySet()){
+            sum += (double)browserStatistic.get(s);
+        }
+        for (String s : browserStatistic.keySet()){
+            browserStat.put(s, (double) browserStatistic.get(s)/sum);
+        }
+        return browserStat;
     }
 }

@@ -79,7 +79,8 @@ public class Main {
                 System.out.println("Share of requests YandexBot: " + yandex_count * 100.0 / (double) count_line);
                 System.out.println(s.getTrafficRate());
                 System.out.println(s.getOsStatistic());
-                System.out.println(s.getPages());
+                System.out.println(s.getBrowserStatistic());
+                System.out.println(s.getNonExistentPages());
 
             } catch (Exception ex) {
                 ex.printStackTrace();
