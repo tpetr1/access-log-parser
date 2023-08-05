@@ -10,6 +10,8 @@ import ru.courses.geometry.Polyline;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
@@ -97,6 +99,17 @@ public class Main {
             list.set(i+1,temp);
         }
         System.out.println(list);
+
+        List<String> str = new ArrayList<>();
+        str.add("String");
+        str.add("valueOf");
+        str.add("list");
+        System.out.println(getStringFromStream(str.stream()));
+    }
+
+    public static String getStringFromStream(Stream stringStream) {
+        //напишите тут ваш код
+        return stringStream.collect(Collectors.joining(" ")).toString();
     }
 
 }
