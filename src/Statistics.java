@@ -14,6 +14,7 @@ public class Statistics {
     int countVisits = 0;
     int errorCount = 0;
     HashSet<String> uniqueUsers = new HashSet<>();
+    HashMap<Integer, Integer> requestsPerSecond = new HashMap<>();
 
     public Statistics() {
     }
@@ -56,7 +57,7 @@ public class Statistics {
         if (!us.isBot()){
             countVisits++;
         }
-        if (le.ip!=null) {
+        if (le.ip!=null&&!us.isBot()) {
             if (!uniqueUsers.contains(le.ip)) {
                 uniqueUsers.add(le.ip);
             }
