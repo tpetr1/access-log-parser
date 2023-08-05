@@ -21,7 +21,7 @@ public class Statistics {
     }
 
     public double getTrafficRate(){
-        long d = Duration.between(minTime, maxTime).toHours();
-        return (double) totalTraffic/(double) d;
+        double d = (double) Duration.between(minTime, maxTime).toMillis()/3600000.0;
+        return (double) totalTraffic/ d;
     }
 }
